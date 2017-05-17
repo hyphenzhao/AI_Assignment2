@@ -1,3 +1,4 @@
+package extrapackage;
 
 public class Point {
 	private double data[] = new double[Default.ARRAY_LENGTH];

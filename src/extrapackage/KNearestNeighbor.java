@@ -1,9 +1,10 @@
+package extrapackage;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-class KNearestNeighbor{
+public class KNearestNeighbor{
 	private ArrayList<Point> points;
 	private int numberOfNeighbors;
 	private Comparator c = new Comparator<Point>() {

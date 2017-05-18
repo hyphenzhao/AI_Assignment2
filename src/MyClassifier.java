@@ -1,12 +1,16 @@
 import java.util.ArrayList;
 
+import extrapackage.Default;
 import extrapackage.FileHandler;
 import extrapackage.KNearestNeighbor;
 import extrapackage.NaiveBayes;
 import extrapackage.Point;
+import extrapackage.TenFoldsCrossValidation;
 
 public class MyClassifier {
 	static public void main(String args[]){
+		if(!args[2].endsWith("NN") || !args[2].endsWith("NB"))
+			Default.ARRAY_LENGTH = Integer.parseInt(args[2]);
 		FileHandler trainingFileHandler = new FileHandler(args[0]);
 		trainingFileHandler.processLines();
 		ArrayList<Point> trainingPointsList = trainingFileHandler.getPointsList();
@@ -33,6 +37,10 @@ public class MyClassifier {
 				else
 					System.out.println("no");
 			}
+		} else {
+			TenFoldsCrossValidation myValidation = new TenFoldsCrossValidation(trainingPointsList);
+			myValidation.startValidation();
+			System.out.println(myValidation);
 		}
 	}
 }

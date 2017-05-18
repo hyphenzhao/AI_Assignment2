@@ -1,5 +1,5 @@
 package extrapackage;
 
 public class Default {
-	static final int ARRAY_LENGTH = 8;
+	public static int ARRAY_LENGTH = 8;
 }

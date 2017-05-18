@@ -4,6 +4,7 @@ public class Point {
 	private double data[] = new double[Default.ARRAY_LENGTH];
 	private boolean result;
 	private double distance;
+	private int foldNo;
 	
 	public Point(double data[], boolean result){
 		this.data = data;
@@ -17,11 +18,17 @@ public class Point {
 	public void setResult(boolean result){
 		this.result = result;
 	}
+	public void setFoldNo(int n){
+		this.foldNo = n;
+	}
 	public double getDistance(){
 		return this.distance;
 	}
 	public boolean getResult(){
 		return this.result;
+	}
+	public int getFoldNo(){
+		return this.foldNo;
 	}
 	public double getDataAt(int index){
 		return data[index];
